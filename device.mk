@@ -141,6 +141,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
 
+
+
+# IPC Router Configuration
+PRODUCT_COPY_FILES += \
+   $(LOCAL_PATH)/configs/sec_config:system/etc/sec_config
+
 # Inherit the rest from msm8916-common
 $(call inherit-product, device/cyanogen/msm8916-common/msm8916.mk)
 
