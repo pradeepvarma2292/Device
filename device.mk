@@ -33,7 +33,12 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8916 \
     memtrack.msm8916
 
-
+# Audio
+AUDIO_FEATURE_DEEP_BUFFER_RINGTONE := true
+AUDIO_FEATURE_ENABLED_KPI_OPTIMIZE := true
+AUDIO_FEATURE_LOW_LATENCY_PRIMARY := true
+BOARD_USES_ALSA_AUDIO := true
+USE_CUSTOM_AUDIO_POLICY := 1
 
 
 # Permissions
@@ -86,7 +91,15 @@ PRODUCT_PACKAGES += \
      lights.msm8916
 
 
-# media_profiles and media_codecs xmls for msm_8916
+# Audio configuration
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/audio/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+    $(LOCAL_PATH)/audio/audio_platform_info.xml:system/etc/audio_platform_info.xml \
+    $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf \
+    $(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml
+
+
+#Audio  media_profiles and media_codecs xmls for msm_8916
 PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/media/media_profiles.xml:system/etc/media_profiles.xml \
      $(LOCAL_PATH)/media/media_codecs.xml:system/etc/media_codecs.xml
