@@ -61,7 +61,6 @@ TARGET_PROVIDES_LIBLIGHT := true
 
 
 # SELinux
-include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy
 
 
@@ -119,6 +118,14 @@ TARGET_GPS_HAL_PATH := $(LOCAL_PATH)/gps
 # Properties
 TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
 
+
+
+# Recovery
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/recovery.fstab
+TARGET_RECOVERY_INITRC := $(LOCAL_PATH)/recovery/init.rc
+BOARD_RECOVERY_SWIPE := true
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
+DEVICE_RESOLUTION := 720x1280
 
 # inherit from the proprietary version
 -include vendor/xiaomi/gucci/BoardConfigVendor.mk

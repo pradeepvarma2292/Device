@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2014 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,4 +16,10 @@
 
 LOCAL_PATH := $(call my-dir)
 
-include $(call all-subdir-makefiles,$(LOCAL_PATH))
+include $(CLEAR_VARS)
+LOCAL_MODULE := recoverylog.sh
+LOCAL_MODULE_TAGS := eng
+LOCAL_MODULE_CLASS := RECOVERY_EXECUTABLES_LOCAL
+LOCAL_MODULE_PATH := $(TARGET_RECOVERY_ROOT_OUT)/etc
+LOCAL_SRC_FILES := etc/$(LOCAL_MODULE)
+include $(BUILD_PREBUILT)
